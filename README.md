@@ -1,5 +1,7 @@
 # Getting Started with Create React App
-
+ // "@emotion/react": "^11.10.6",
+    // "@emotion/styled": "^11.10.6",
+    // "@mui/material": "^5.11.16",
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
