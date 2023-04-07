@@ -26,6 +26,8 @@ export default function Form(props) {
   //props.toapi
   // props.data
   // let Keys = props.key
+  // props.state
+  // props.setState
  
   const toapi = props.toapi
 
@@ -100,6 +102,7 @@ export default function Form(props) {
   const handleSubmit =(e)=>{
     e.preventDefault()
     sendValue(Value)
+    props.setState(!props.State)
   }
 
   

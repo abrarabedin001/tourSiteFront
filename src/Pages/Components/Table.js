@@ -7,13 +7,30 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
-const deleteHandler =()=>{
-  return 0;
-}
+import axios from 'axios';
+
+
 
 export default function DenseTable(props) {
   let rows = props.Data;
+  let toapi = props.toapi;
   // console.log(rows)
+  const delValue= async  (Id)=>{
+    try {
+      let link = toapi+"/"+Id
+      // console.log(link);
+      const resp = await axios.delete(link);
+      
+  } catch (err) {
+      // Handle Error Here
+      console.error(err);
+  }
+  }
+  
+  
+  const deleteHandler =(e,rows)=>{
+    delValue(rows["Id"])
+  }
  
   // console.log(keys,Values)
   return (
@@ -40,10 +57,10 @@ export default function DenseTable(props) {
             >
               {props.keys.map((key)=>
               <TableCell component="th" scope="row" >
-                {console.log(row)}
+              
                 {row[key]}
               </TableCell> )}
-              <TableCell align="right"><button className="p-2 m-2 bg-red-600" onClick={deleteHandler}>Delete</button></TableCell>
+              <TableCell align="right"><button className="p-2 m-2 bg-red-600" onClick={(e,rows)=>deleteHandler(e,row)}>Delete</button></TableCell>
 
              
             </TableRow>

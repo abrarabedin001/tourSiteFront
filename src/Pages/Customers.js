@@ -15,6 +15,7 @@ export function Customers() {
   const dataRef = useRef([])
   const[Data,setData] = useState([]);
   const[Keys,setKeys] = useState([]);
+  const[State,setState] = useState(false)
   useEffect(
     ()=>{
      async function getData(){
@@ -31,7 +32,7 @@ export function Customers() {
      
      
     }
-    ,[]
+    ,[State]
 
     
   )
@@ -42,8 +43,8 @@ export function Customers() {
         hello
       </div>
 
-      <Table Data={Data} keys={Keys} className=""/>
-      <Form api={api} toapi={toapi} data={Data} />
+      <Table Data={Data} keys={Keys} toapi={toapi} state={State} setState={setState} className=""/>
+      <Form api={api} toapi={toapi} data={Data} state={State} setState={setState} />
       
       
       

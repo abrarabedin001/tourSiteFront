@@ -10,16 +10,6 @@ const api = "http://localhost:3001/employees"
 const toapi = "http://localhost:3001/employees"
 
 
-
-
-
-
-
-
-
-
-
-
 export function Employees() {
   const dataRef = useRef([])
   
@@ -98,7 +88,7 @@ export function Employees() {
     <div>
 
       
-      <Table Data={Data} keys={Keys}/>
+      <Table Data={Data} keys={Keys} toapi={toapi}/>
      
       <form onSubmit={handleSubmit} className="max-w-[500px] bg-red-700 flex flex-wrap space-between "  >
         {
